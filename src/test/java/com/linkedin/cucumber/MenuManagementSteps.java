@@ -11,7 +11,8 @@ public class MenuManagementSteps {
     RestaurantMenuItem newMenuItem;
     RestaurantMenu locationMenu = new RestaurantMenu();
 
-    @Given("I have a menu item with name {string} and price {int}")
+//    @Given("I have a menu item with name {string} and price {int}") // with cucumber expression
+    @Given("^I have a menu item with name \"([^\"]+)\" and price ([0-9]+)$") // with regular expression
     public void i_have_a_menu_item_with_name_and_price(String newMenuItemName, Integer price) {
 
         newMenuItem = new RestaurantMenuItem(newMenuItemName, newMenuItemName, price);
